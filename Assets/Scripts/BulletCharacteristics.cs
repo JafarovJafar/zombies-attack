@@ -7,6 +7,4 @@ public class BulletCharacteristics : ScriptableObject
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _strength;
-
-
 }
