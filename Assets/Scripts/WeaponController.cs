@@ -3,7 +3,7 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     #region Properties
-    public bool CanShoot => Time.time > _lastShootTime + _characteristics.ShootInterval; // в будущем можно модифицировать и добавить проверку на то, что оружие не перезаряжается
+    public bool CanShoot => Time.time > _lastShootTime + _characteristics.ShootInterval; // РІ Р±СѓРґСѓС‰РµРј РјРѕР¶РЅРѕ РјРѕРґРёС„РёС†РёСЂРѕРІР°С‚СЊ Рё РґРѕР±Р°РІРёС‚СЊ РїСЂРѕРІРµСЂРєСѓ РЅР° С‚Рѕ, С‡С‚Рѕ РѕСЂСѓР¶РёРµ РЅРµ РїРµСЂРµР·Р°СЂСЏР¶Р°РµС‚СЃСЏ
     #endregion
 
     [SerializeField] private ObjectPool _bulletsPool;
