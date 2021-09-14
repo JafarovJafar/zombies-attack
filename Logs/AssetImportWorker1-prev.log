@@ -1,0 +1,243 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.1f1 (270dd8c3da1c) revision 2559448'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'ru' Physical Memory: 7549 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/UnityProjects/zombies attack
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+63207
+Successfully changed project path to: C:/UnityProjects/zombies attack
+C:/UnityProjects/zombies attack
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 39.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/UnityProjects/zombies attack/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 Ti (ID=0x1f95)
+    Vendor:   
+    VRAM:     3962 MB
+    Driver:   27.21.14.5167
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56016
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004845 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 57.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.758 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002254 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 42.28 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.176 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1792 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.7 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2230.
+Total: 4.390900 ms (FindLiveObjects: 0.339000 ms CreateObjectMapping: 0.106200 ms MarkObjects: 3.735300 ms  DeleteObjects: 0.208000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_3.png
+  artifactKey: Guid(242de3857939ad141adf4099b93432b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_3.png using Guid(242de3857939ad141adf4099b93432b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b897d50bbbc942c1679df07643f7afea') in 0.321703 seconds
+  Import took 0.328760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000608 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_5.png
+  artifactKey: Guid(6cda7eb4d7d5d734bb1728a1049e5679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_5.png using Guid(6cda7eb4d7d5d734bb1728a1049e5679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6498e8a629683e31f2b381920d4b2b7') in 0.038259 seconds
+  Import took 0.044952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000407 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_2.png
+  artifactKey: Guid(a6a665c0bd6ac844e8f86c69782472f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_2.png using Guid(a6a665c0bd6ac844e8f86c69782472f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19176df1e6cd8255934ca3dfbece48d9') in 0.039181 seconds
+  Import took 0.046393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000387 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_16.png
+  artifactKey: Guid(baf1399646ee4af4787b00bc57e4dde2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_16.png using Guid(baf1399646ee4af4787b00bc57e4dde2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77415a22503f370e52a7b9f6070c481e') in 0.035740 seconds
+  Import took 0.041930 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000395 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_18.png
+  artifactKey: Guid(dbac362ad5cac4e48bcdb23c978bd85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_18.png using Guid(dbac362ad5cac4e48bcdb23c978bd85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07569bdca058905a27935e8e55e3f465') in 0.027610 seconds
+  Import took 0.033626 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_15.png
+  artifactKey: Guid(e853a3bc36d90c642882d9f283c24253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_15.png using Guid(e853a3bc36d90c642882d9f283c24253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd359d898046b5df0d46ecd4f89751ad5') in 0.035883 seconds
+  Import took 0.041752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_6.png
+  artifactKey: Guid(4a5cb250ed45a034081f02ba4f25c077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_6.png using Guid(4a5cb250ed45a034081f02ba4f25c077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91f1f8ff7c581f2d76205c02c1fe97c6') in 0.030943 seconds
+  Import took 0.037050 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_8.png
+  artifactKey: Guid(86cc625e33409f047af1edc5ee821898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_8.png using Guid(86cc625e33409f047af1edc5ee821898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf9ae95696b0f774fb6997e36b42a9f9') in 0.027581 seconds
+  Import took 0.034213 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_1.png
+  artifactKey: Guid(c53ea7ae67adcea4f9755a8914304edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_1.png using Guid(c53ea7ae67adcea4f9755a8914304edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9b6109ca6fe29762a0c254f2fa2aaf') in 0.024872 seconds
+  Import took 0.033490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_10.png
+  artifactKey: Guid(548c44598dbbf404a8e47de05d62fc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_10.png using Guid(548c44598dbbf404a8e47de05d62fc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '307561c65d27814e183bd8c470411cd5') in 0.029046 seconds
+  Import took 0.033821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000449 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_12.png
+  artifactKey: Guid(73a4fc3d384c97e40a86a7daf54bc62b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_12.png using Guid(73a4fc3d384c97e40a86a7daf54bc62b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee6996738d24e056b42482ac75235988') in 0.022484 seconds
+  Import took 0.028326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_14.png
+  artifactKey: Guid(4473e76606cc6cd4d85e8ed37609445e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_14.png using Guid(4473e76606cc6cd4d85e8ed37609445e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbd43e2bb4de1bfab68a900339a01549') in 0.035469 seconds
+  Import took 0.039989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_19.png
+  artifactKey: Guid(ff7fdb5aecc105f44ada0b6d6bb99c24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_19.png using Guid(ff7fdb5aecc105f44ada0b6d6bb99c24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '587956b1980d3d65f6f00b10396c1903') in 0.025637 seconds
+  Import took 0.030945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_13.png
+  artifactKey: Guid(71477d7f0c73c1e4790a1edd9710c902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_13.png using Guid(71477d7f0c73c1e4790a1edd9710c902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fb086410f7881d777491ba818772d28') in 0.025628 seconds
+  Import took 0.029585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_7.png
+  artifactKey: Guid(bb517a6f549d07844afd5f7edd1e8d20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_7.png using Guid(bb517a6f549d07844afd5f7edd1e8d20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25f6d00bb2a62fe574b34ddd097e32fa') in 0.034425 seconds
+  Import took 0.038760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_0.png
+  artifactKey: Guid(ecc0ce76671dc764abddb77b90ffc14a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_0.png using Guid(ecc0ce76671dc764abddb77b90ffc14a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d9ebe32ed045fe8205eada9befc14fc') in 0.029032 seconds
+  Import took 0.033259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_17.png
+  artifactKey: Guid(87da10cb02a85dc4bac3b5f535c8c5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_17.png using Guid(87da10cb02a85dc4bac3b5f535c8c5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f66119adf35b9cd96cd3e5280145c76e') in 0.021471 seconds
+  Import took 0.025535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_0.png
+  artifactKey: Guid(ecc0ce76671dc764abddb77b90ffc14a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_0.png using Guid(ecc0ce76671dc764abddb77b90ffc14a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d9ebe32ed045fe8205eada9befc14fc') in 0.020706 seconds
+  Import took 0.024455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_11.png
+  artifactKey: Guid(902a31e5a6629a94fad6c08db3ce8b19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_11.png using Guid(902a31e5a6629a94fad6c08db3ce8b19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '771830690f3ad424100d6d690ab0e656') in 0.029043 seconds
+  Import took 0.033548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_4.png
+  artifactKey: Guid(9fa71c728b3a81d4a8b16b8c92cb75d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_4.png using Guid(9fa71c728b3a81d4a8b16b8c92cb75d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4422b8b3475d2ac5f8c75bf81e7957e3') in 0.022273 seconds
+  Import took 0.026211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Sprites/Player/idle/survivor-idle_rifle_9.png
+  artifactKey: Guid(8f5f1f90cc7177f4ea47c71b97f10302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/idle/survivor-idle_rifle_9.png using Guid(8f5f1f90cc7177f4ea47c71b97f10302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a8cdb768e7fc47cc95b25d7c035eca') in 0.024082 seconds
+  Import took 0.028538 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
