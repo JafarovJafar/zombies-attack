@@ -17,7 +17,7 @@ public class PlayerTouchInput : MonoBehaviour
 
     #region Vars
     [SerializeField] private Camera _camera;
-    [SerializeField] private IControllable _controllable;
+    private IControllable _controllable;
     private Vector3 _goalPosition = new Vector3();
     #endregion
 
