@@ -15,8 +15,6 @@ public class Bullet : MonoBehaviour, IPoolItem
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _strength;
-
-
     #endregion
 
     #region Methods
