@@ -1,29 +1,29 @@
 using UnityEngine;
 
 /// <summary>
-/// Контейнер характеристик оружия
+/// РљРѕРЅС‚РµР№РЅРµСЂ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РѕСЂСѓР¶РёСЏ
 /// </summary>
 public class WeaponCharacteristics : ScriptableObject
 {
     #region Properties
     /// <summary>
-    /// Название
+    /// РќР°Р·РІР°РЅРёРµ
     /// </summary>
     public string Name => _name;
     /// <summary>
-    /// Интервал между выстрелами в секундах
+    /// РРЅС‚РµСЂРІР°Р» РјРµР¶РґСѓ РІС‹СЃС‚СЂРµР»Р°РјРё РІ СЃРµРєСѓРЅРґР°С…
     /// </summary>
     public float ShootInterval => _shootInterval;
     /// <summary>
-    /// Наносимый урон
+    /// РќР°РЅРѕСЃРёРјС‹Р№ СѓСЂРѕРЅ
     /// </summary>
     public float Strength => _strength;
     /// <summary>
-    /// Скорость полета пули
+    /// РЎРєРѕСЂРѕСЃС‚СЊ РїРѕР»РµС‚Р° РїСѓР»Рё
     /// </summary>
     public float BulletSpeed => _bulletSpeed;
     /// <summary>
-    /// Префаб инициализируемой пули
+    /// РџСЂРµС„Р°Р± РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРјРѕР№ РїСѓР»Рё
     /// </summary>
     public GameObject BulletPrefab => _bulletPrefab;
     #endregion
