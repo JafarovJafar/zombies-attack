@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour, IControllable
+public class Player : Character, IControllable
 {
     #region Base
     private void Start()
@@ -42,6 +42,10 @@ public class Player : MonoBehaviour, IControllable
     [SerializeField] private WeaponCharacteristics _weaponCharacteristics;
     #endregion
 
+    #region Animations
+    private readonly string SHOOT_ANIMATION_NAME = "Shoot";
+    #endregion
+
     #endregion
 
     #region Methods
@@ -60,7 +64,7 @@ public class Player : MonoBehaviour, IControllable
     private void TryShoot()
     {
         // тут можно делать всякие модификации (например если зомби близко, то бьет прикладом вместо стрельбы)
-        
+
         if (_weaponController.CanShoot)
         {
             Shoot();
@@ -69,7 +73,7 @@ public class Player : MonoBehaviour, IControllable
 
     private void Shoot()
     {
-        // anim.play(shoot)
+        _animator.Play(SHOOT_ANIMATION_NAME, 0, 0);
 
         _weaponController.Shoot();
     }

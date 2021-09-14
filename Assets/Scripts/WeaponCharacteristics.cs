@@ -15,6 +15,14 @@ public class WeaponCharacteristics : ScriptableObject
     /// </summary>
     public float ShootInterval => _shootInterval;
     /// <summary>
+    /// Наносимый урон
+    /// </summary>
+    public float Strength => _strength;
+    /// <summary>
+    /// Скорость полета пули
+    /// </summary>
+    public float BulletSpeed => _bulletSpeed;
+    /// <summary>
     /// Префаб инициализируемой пули
     /// </summary>
     public GameObject BulletPrefab => _bulletPrefab;
@@ -22,5 +30,7 @@ public class WeaponCharacteristics : ScriptableObject
 
     [SerializeField] private string _name;
     [SerializeField] private float _shootInterval;
+    [SerializeField] private float _strength;
+    [SerializeField] private float _bulletSpeed;
     [SerializeField] private GameObject _bulletPrefab;
 }

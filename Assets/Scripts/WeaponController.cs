@@ -29,5 +29,7 @@ public class WeaponController : MonoBehaviour
 
         tempGO.transform.position = _muzzleTransform.position;
         tempGO.transform.rotation = _muzzleTransform.rotation;
+
+        tempGO.GetComponent<Bullet>().Init(_characteristics);
     }
 }
