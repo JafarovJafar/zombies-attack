@@ -21,6 +21,30 @@ public class Player : Character, IControllable
     #endregion
 
     #region Vars
+    #region Inputs
+    public float HorAxis
+    {
+        get => _horAxis;
+        set => _horAxis = Mathf.Clamp(_horAxis,-1f, 1f);
+    }
+
+    public float VertAxis
+    {
+        get => _vertAxis;
+        set => _vertAxis = Mathf.Clamp(_vertAxis, -1f, 1f);
+    }
+
+    public Vector2 TouchPosition // Вдруг потом придется как-то обрабатывать тач. Поэтому пусть будет свойство
+    {
+        get => _touchPosition;
+        set => _touchPosition = value;
+    }
+
+    private float _horAxis;
+    private float _vertAxis;
+    private Vector2 _touchPosition;
+    #endregion
+
     #region State Machine
     private enum States
     {
@@ -33,7 +57,7 @@ public class Player : Character, IControllable
     #region Movement
     [SerializeField] private Transform _rootTransform;
 
-    private Vector3 _goalPosition = new Vector3();
+    //private Vector3 _goalPosition = new Vector3();
     private Vector3 _goalEulerAngles = new Vector3();
     #endregion
 
@@ -51,14 +75,9 @@ public class Player : Character, IControllable
     #region Methods
     private void Rotate()
     {
-        _goalEulerAngles.z = Vector2.SignedAngle(transform.up, _goalPosition);
+        _goalEulerAngles.z = Vector2.SignedAngle(transform.up, _touchPosition);
 
         _rootTransform.eulerAngles = _goalEulerAngles;
-    }
-
-    public void SetGoalPosition(Vector3 goalPosition)
-    {
-        _goalPosition = goalPosition;
     }
 
     private void TryShoot()
