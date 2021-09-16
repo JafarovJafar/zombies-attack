@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour, IPoolItem
+public class BulletController : MonoBehaviour, IPoolItem
 {
     #region Base
     private void Update()
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour, IPoolItem
     #endregion
 
     #region Methods
-    public void Init(WeaponCharacteristics characteristics)
+    public void Init(WeaponModel characteristics)
     {
         _moveSpeed = characteristics.BulletSpeed;
         _strength = characteristics.Strength;

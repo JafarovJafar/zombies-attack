@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletCharacteristics : ScriptableObject
+public class BulletModel : ScriptableObject
 {
     public float MoveSpeed => _moveSpeed;
     public float Strength => _strength;

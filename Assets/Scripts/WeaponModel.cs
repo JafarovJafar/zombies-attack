@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Контейнер характеристик оружия
 /// </summary>
-public class WeaponCharacteristics : ScriptableObject
+public class WeaponModel : ScriptableObject
 {
     #region Properties
     /// <summary>

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Player : Character, IControllable
+public class PlayerController : Character, IControllable, IDamageable
 {
     #region Base
     private void Start()
     {
-        _weaponController.Init(_weaponCharacteristics);
+        _weaponController.Init(_weaponModel);
     }
 
     private void Update()
@@ -14,7 +14,7 @@ public class Player : Character, IControllable
         {
             case States.Default:
                 Rotate();
-                TryShoot();
+                //TryShoot();
                 break;
         }
     }
@@ -25,7 +25,7 @@ public class Player : Character, IControllable
     public float HorAxis
     {
         get => _horAxis;
-        set => _horAxis = Mathf.Clamp(_horAxis,-1f, 1f);
+        set => _horAxis = Mathf.Clamp(_horAxis, -1f, 1f);
     }
 
     public float VertAxis
@@ -39,10 +39,6 @@ public class Player : Character, IControllable
         get => _touchPosition;
         set => _touchPosition = value;
     }
-
-    private float _horAxis;
-    private float _vertAxis;
-    private Vector2 _touchPosition;
     #endregion
 
     #region State Machine
@@ -54,32 +50,24 @@ public class Player : Character, IControllable
     private States _currentState;
     #endregion
 
-    #region Movement
-    [SerializeField] private Transform _rootTransform;
-
-    //private Vector3 _goalPosition = new Vector3();
-    private Vector3 _goalEulerAngles = new Vector3();
-    #endregion
-
     #region Shooting
     [SerializeField] private WeaponController _weaponController;
-    [SerializeField] private WeaponCharacteristics _weaponCharacteristics;
+    [SerializeField] private WeaponModel _weaponModel;
     #endregion
 
     #region Animations
     private readonly string SHOOT_ANIMATION_NAME = "Shoot";
     #endregion
 
+
+    [SerializeField] private PlayerModel _model;
+    public PlayerModel Model => _model;
+
+    protected override CharacterModel BaseModel => _model;
+
     #endregion
 
     #region Methods
-    private void Rotate()
-    {
-        _goalEulerAngles.z = Vector2.SignedAngle(transform.up, _touchPosition);
-
-        _rootTransform.eulerAngles = _goalEulerAngles;
-    }
-
     private void TryShoot()
     {
         // тут можно делать всякие модификации (например если зомби близко, то бьет прикладом вместо стрельбы)
@@ -95,6 +83,11 @@ public class Player : Character, IControllable
         _animator.Play(SHOOT_ANIMATION_NAME, 0, 0);
 
         _weaponController.Shoot();
+    }
+
+    public void TakeDamage(float damage)
+    {
+
     }
     #endregion
 }
