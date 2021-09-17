@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Базовый класс для всех юнитов (солдаты и зомби)
 /// </summary>
-public abstract class Character : MonoBehaviour
+public abstract class CharacterController : MonoBehaviour
 {
     #region Inputs
     protected float _horAxis;
@@ -12,15 +12,24 @@ public abstract class Character : MonoBehaviour
     #endregion
 
     [SerializeField] protected Collider2D _collider;
+    [SerializeField] protected Rigidbody2D _rigidbody;
     [SerializeField] protected Animator _animator;
 
     #region Movement
     protected Vector2 _moveVector = new Vector2();
 
-    [SerializeField] private Transform _rootTransform;
+    [SerializeField] protected Transform _rootTransform;
+
+    public Transform RootTransform => _rootTransform;
+
+    public Vector3 Up => _rootTransform.up;
 
     private Vector3 _goalEulerAngles = new Vector3();
     #endregion
+
+    protected float _health;
+    protected float _maxHealth;
+    protected float _minHealth;
 
     protected abstract CharacterModel BaseModel { get; }
 
@@ -34,7 +43,7 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Move()
     {
-        transform.Translate(BaseModel.MoveSpeed * _moveVector * Time.deltaTime);
+        _rigidbody.velocity = BaseModel.MoveSpeed * _moveVector;
     }
 
     protected virtual void Rotate()

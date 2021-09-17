@@ -2,13 +2,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ZombieController : Character, IControllable, IPoolItem, IDamageable
+public class ZombieController : CharacterController, IControllable, IPoolItem, IDamageable
 {
     #region Base
     private void Update()
     {
         GetMoveVector();
         Move();
+    }
+
+    private void LateUpdate()
+    {
+        ProcessDamage();
     }
     #endregion
 
@@ -35,6 +40,9 @@ public class ZombieController : Character, IControllable, IPoolItem, IDamageable
     [SerializeField] private ZombieModel _model;
     public ZombieModel Model => _model;
 
+    private bool _isDamaged;
+    private float _lastDamage;
+
     public void Init(ZombieModel model)
     {
 
@@ -50,11 +58,39 @@ public class ZombieController : Character, IControllable, IPoolItem, IDamageable
     {
         yield return new WaitForSeconds(5);
 
+        Finished?.Invoke();
         yield return null;
     }
 
     public void TakeDamage(float damage)
     {
+        _isDamaged = true;
+        _lastDamage = damage;
+    }
 
+    private void ProcessDamage()
+    {
+        if (_isDamaged)
+        {
+            _health -= _lastDamage;
+
+            if (_health <= _minHealth)
+            {
+                Destroy();
+            }
+
+            _isDamaged = false;
+        }
+    }
+
+    private void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void CopyTransform(Transform goalTransform)
+    {
+        transform.position = goalTransform.position;
+        _rootTransform.rotation = goalTransform.rotation;
     }
 }

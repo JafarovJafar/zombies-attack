@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : Character, IControllable, IDamageable
+public class PlayerController : CharacterController, IControllable, IDamageable
 {
     #region Base
     private void Start()
@@ -14,9 +14,14 @@ public class PlayerController : Character, IControllable, IDamageable
         {
             case States.Default:
                 Rotate();
-                //TryShoot();
+                TryShoot();
                 break;
         }
+    }
+
+    private void LateUpdate()
+    {
+        ProcessDamage();
     }
     #endregion
 
@@ -65,6 +70,8 @@ public class PlayerController : Character, IControllable, IDamageable
 
     protected override CharacterModel BaseModel => _model;
 
+    private bool _isDamaged;
+    private float _lastDamage;
     #endregion
 
     #region Methods
@@ -88,6 +95,16 @@ public class PlayerController : Character, IControllable, IDamageable
     public void TakeDamage(float damage)
     {
 
+    }
+
+    private void ProcessDamage()
+    {
+        if (_isDamaged)
+        {
+            _health -= _lastDamage;
+
+            _isDamaged = false;
+        }
     }
     #endregion
 }

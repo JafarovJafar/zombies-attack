@@ -12,7 +12,14 @@ public class ZombieAI : MonoBehaviour
                 // тут в будущем можно делать проверку на поле зрения
                 // допустим сделать, чтобы зомби начинал преследовать того, кто попал в поле зрения
 
-                //ChangeState(States.Follow);
+                _raycastHit = Physics2D.Raycast(transform.position, _zombieController.Up);
+
+                if (_raycastHit.transform.CompareTag(CONSTANTS.PLAYER_TAG))
+                {
+                    _goalTransform = _raycastHit.transform;
+
+                    ChangeState(States.Follow);
+                }
 
                 break;
 
@@ -43,12 +50,14 @@ public class ZombieAI : MonoBehaviour
     #endregion
 
     #region Vars
-    public IControllable _zombie;
-    public ZombieController _zombieController;
+    private IControllable _zombie;
+    [SerializeField]private ZombieController _zombieController;
 
     public Transform _goalTransform;
 
     private Vector3 _goalVector;
+
+    private RaycastHit2D _raycastHit;
 
     #region State Machine
     private enum States

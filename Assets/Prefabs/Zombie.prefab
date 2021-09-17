@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3625630236164212285}
   - component: {fileID: 3625630236164212674}
   - component: {fileID: 3625630236164212284}
+  - component: {fileID: 5146341834565509070}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 3625630236164212284}
+  _rigidbody: {fileID: 5146341834565509070}
   _animator: {fileID: 0}
   _rootTransform: {fileID: 3625630237874885932}
   _model: {fileID: 0}
@@ -80,6 +82,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!50 &5146341834565509070
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625630236164212672}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 80000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3625630236283548842
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3625630236283548837}
   - component: {fileID: 3625630236283548836}
+  - component: {fileID: 1119739210909575032}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -162,6 +186,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1119739210909575032
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625630236283548842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a0cc8bc038bdc24dbdb4edf6be7ac58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3625630237874885933
 GameObject:
   m_ObjectHideFlags: 0

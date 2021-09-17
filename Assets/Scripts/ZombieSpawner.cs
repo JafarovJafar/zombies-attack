@@ -17,6 +17,8 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private float _speedDecreaseValue;
     [SerializeField] private float _minSpeed;
 
+    [SerializeField] private ObjectPool _zombiesPool;
+
     private IEnumerator StartSpawning()
     {
         while (true)
@@ -60,10 +62,13 @@ public class ZombieSpawner : MonoBehaviour
 
     private void SpawnZombieInternal(ZombieModel model, Transform spawnPoint)
     {
-        ZombieController zombie = Instantiate(_zombiePrefab).GetComponent<ZombieController>();
+        GameObject zombieGO = _zombiesPool.GetItem();
+
+        ZombieController zombie = zombieGO.GetComponent<ZombieController>();
         zombie.Init(model);
-        zombie.transform.position = spawnPoint.position;
-        zombie.transform.rotation = spawnPoint.rotation;
+        //zombie.transform.position = spawnPoint.position;
+        //zombie.transform.rotation = spawnPoint.rotation;
+        zombie.CopyTransform(spawnPoint);
     }
 
     private void SpawnZombie()
