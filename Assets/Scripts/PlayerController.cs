@@ -94,7 +94,10 @@ public class PlayerController : CharacterController, IControllable, IDamageable
 
     public void TakeDamage(float damage)
     {
+        _isDamaged = true;
+        _lastDamage = damage;
 
+        Debug.Log("vvv");
     }
 
     private void ProcessDamage()
@@ -103,8 +106,20 @@ public class PlayerController : CharacterController, IControllable, IDamageable
         {
             _health -= _lastDamage;
 
+            if (_health < _model.MinHealth)
+            {
+                Destroy();
+
+                EventsPool.Instance.PlayerDead?.Invoke();
+            }
+
             _isDamaged = false;
         }
+    }
+
+    private void Destroy()
+    {
+        gameObject.SetActive(false);
     }
     #endregion
 }

@@ -27,9 +27,7 @@ public abstract class CharacterController : MonoBehaviour
     private Vector3 _goalEulerAngles = new Vector3();
     #endregion
 
-    protected float _health;
-    protected float _maxHealth;
-    protected float _minHealth;
+    [SerializeField] protected float _health;
 
     protected abstract CharacterModel BaseModel { get; }
 

@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Zombie1
   m_EditorClassIdentifier: 
   _moveSpeed: 5
-  _attackDistance: 1
+  _attackDistance: 1.5
+  _attackPrepareDuration: 0.5
+  _attackReleaseDuration: 0.5
+  _strength: 10

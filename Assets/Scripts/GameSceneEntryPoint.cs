@@ -7,9 +7,13 @@ public class GameSceneEntryPoint : MonoBehaviour
         _playerTouchInput.Init(_player);
 
         _zombieSpawner.Enable();
+        _eventsPool.Init();
+
+
     }
 
     [SerializeField] PlayerTouchInput _playerTouchInput;
     [SerializeField] PlayerController _player;
     [SerializeField] ZombieSpawner _zombieSpawner;
+    [SerializeField] EventsPool _eventsPool;
 }

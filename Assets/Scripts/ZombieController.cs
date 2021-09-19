@@ -43,6 +43,9 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
     private bool _isDamaged;
     private float _lastDamage;
 
+    private RaycastHit2D _raycastHit;
+    private IDamageable _tempIDamageable;
+
     public void Init(ZombieModel model)
     {
 
@@ -54,9 +57,28 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
 
     }
 
-    public IEnumerator AttackAsync(UnityAction Finished)
+    public void Attack(UnityAction Finished)
     {
-        yield return new WaitForSeconds(5);
+        StartCoroutine(AttackAsync(Finished));
+    }
+
+    private IEnumerator AttackAsync(UnityAction Finished)
+    {
+        yield return new WaitForSeconds(_model.AttackPrepareDuration);
+
+        _raycastHit = Physics2D.Raycast(transform.position, RootTransform.up, _model.AttackDistance);
+
+        if (_raycastHit.transform != null)
+        {
+            _tempIDamageable = _raycastHit.transform.GetComponent<IDamageable>();
+
+            if (_tempIDamageable != null)
+            {
+                _tempIDamageable.TakeDamage(_model.Strength);
+            }
+        }
+
+        yield return new WaitForSeconds(_model.AttackReleaseDuration);
 
         Finished?.Invoke();
         yield return null;
@@ -74,7 +96,7 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
         {
             _health -= _lastDamage;
 
-            if (_health <= _minHealth)
+            if (_health <= _model.MinHealth)
             {
                 Destroy();
             }

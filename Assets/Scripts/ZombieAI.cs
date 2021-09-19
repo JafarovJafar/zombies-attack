@@ -34,24 +34,19 @@ public class ZombieAI : MonoBehaviour
                     _zombieController.VertAxis = 0;
                     ChangeState(States.Attack);
 
-                    StartCoroutine(_zombieController.AttackAsync(() =>
+                    _zombieController.Attack(() =>
                     {
                         Debug.Log("finished");
                         ChangeState(States.Follow);
-                    }));
+                    });
                 }
-                break;
-
-            case States.Attack:
-
                 break;
         }
     }
     #endregion
 
     #region Vars
-    private IControllable _zombie;
-    [SerializeField]private ZombieController _zombieController;
+    [SerializeField]private ZombieController _zombieController; // вообще тут в идеале указать интерфейс IControllable, но интерфейсы нельзя прокидывать через инспектор
 
     public Transform _goalTransform;
 
