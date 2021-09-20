@@ -14,8 +14,8 @@ public class ZombieAI : MonoBehaviour
         {
             case States.Idle:
 
-                // тут в будущем можно делать проверку на поле зрения
-                // допустим сделать, чтобы зомби начинал преследовать того, кто попал в поле зрения
+                // С‚СѓС‚ РІ Р±СѓРґСѓС‰РµРј РјРѕР¶РЅРѕ РґРµР»Р°С‚СЊ РїСЂРѕРІРµСЂРєСѓ РЅР° РїРѕР»Рµ Р·СЂРµРЅРёСЏ
+                // РґРѕРїСѓСЃС‚РёРј СЃРґРµР»Р°С‚СЊ, С‡С‚РѕР±С‹ Р·РѕРјР±Рё РЅР°С‡РёРЅР°Р» РїСЂРµСЃР»РµРґРѕРІР°С‚СЊ С‚РѕРіРѕ, РєС‚Рѕ РїРѕРїР°Р» РІ РїРѕР»Рµ Р·СЂРµРЅРёСЏ
 
                 _raycastHit = Physics2D.Raycast(transform.position, _zombieController.Up);
 
@@ -61,7 +61,7 @@ public class ZombieAI : MonoBehaviour
     #endregion
 
     #region Vars
-    [SerializeField] private ZombieController _zombieController; // вообще тут в идеале указать интерфейс IControllable, но интерфейсы нельзя прокидывать через инспектор
+    [SerializeField] private ZombieController _zombieController; // РІРѕРѕР±С‰Рµ С‚СѓС‚ РІ РёРґРµР°Р»Рµ СѓРєР°Р·Р°С‚СЊ РёРЅС‚РµСЂС„РµР№СЃ IControllable, РЅРѕ РёРЅС‚РµСЂС„РµР№СЃС‹ РЅРµР»СЊР·СЏ РїСЂРѕРєРёРґС‹РІР°С‚СЊ С‡РµСЂРµР· РёРЅСЃРїРµРєС‚РѕСЂ
 
     public Transform _goalTransform;
 
