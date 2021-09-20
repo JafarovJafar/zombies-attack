@@ -3,6 +3,11 @@ using UnityEngine;
 public class ZombieAI : MonoBehaviour
 {
     #region Base
+    private void Start()
+    {
+        EventsPool.Instance.PlayerDead += ProcessPlayerDeath;
+    }
+
     private void Update()
     {
         switch (_currentState)
@@ -18,12 +23,23 @@ public class ZombieAI : MonoBehaviour
                 {
                     _goalTransform = _raycastHit.transform;
 
+                    _zombieController.Follow();
+
                     ChangeState(States.Follow);
                 }
 
                 break;
 
             case States.Follow:
+                if (_goalTransform == null)
+                {
+                    _zombieController.HorAxis = 0;
+                    _zombieController.VertAxis = 0;
+
+                    ChangeState(States.Idle);
+                    return;
+                }
+
                 _goalVector = _goalTransform.position - transform.position;
                 _zombieController.HorAxis = _goalVector.x;
                 _zombieController.VertAxis = _goalVector.y;
@@ -36,8 +52,7 @@ public class ZombieAI : MonoBehaviour
 
                     _zombieController.Attack(() =>
                     {
-                        Debug.Log("finished");
-                        ChangeState(States.Follow);
+                        ChangeState(States.Idle);
                     });
                 }
                 break;
@@ -46,7 +61,7 @@ public class ZombieAI : MonoBehaviour
     #endregion
 
     #region Vars
-    [SerializeField]private ZombieController _zombieController; // вообще тут в идеале указать интерфейс IControllable, но интерфейсы нельзя прокидывать через инспектор
+    [SerializeField] private ZombieController _zombieController; // вообще тут в идеале указать интерфейс IControllable, но интерфейсы нельзя прокидывать через инспектор
 
     public Transform _goalTransform;
 
@@ -70,6 +85,11 @@ public class ZombieAI : MonoBehaviour
     private void ChangeState(States state)
     {
         _currentState = state;
+    }
+
+    private void ProcessPlayerDeath()
+    {
+        _goalTransform = null;
     }
     #endregion
 }

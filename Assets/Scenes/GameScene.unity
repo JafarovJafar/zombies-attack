@@ -289,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _models:
   - {fileID: 11400000, guid: 78cc03a57a3c7e6479f9cfedd98e2cda, type: 2}
+  - {fileID: 11400000, guid: 6e34289da8b132a4cbf9bca2b2c7008f, type: 2}
+  - {fileID: 11400000, guid: 14ba3223291d18346ae29a2cf7d9d1f0, type: 2}
   _zombiePrefab: {fileID: 3625630236164212672, guid: 3b7d810b05471c04eb12bf3ce5423b6e, type: 3}
   _spawnInterval: 2
   _spawnPoints:
@@ -301,6 +303,11 @@ MonoBehaviour:
   _speedDecreaseValue: 0.1
   _minSpeed: 0.5
   _zombiesPool: {fileID: 354786955}
+  _spawnChances:
+  - 60
+  - 30
+  - 10
+  _spawnChancesStarts: []
 --- !u!114 &354786955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemPrefab: {fileID: 3625630236164212672, guid: 3b7d810b05471c04eb12bf3ce5423b6e, type: 3}
   _itemName: Zombie_
+  _items: []
 --- !u!1 &362471673
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemPrefab: {fileID: 1287532068161542503, guid: ac2f9e2466660f545bf25d3dbe128c45, type: 3}
   _itemName: PlayerBullet
+  _items: []
 --- !u!1 &816821518
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +804,9 @@ MonoBehaviour:
   _collider: {fileID: 816821521}
   _rigidbody: {fileID: 816821522}
   _animator: {fileID: 832781348}
+  _spriteRenderer: {fileID: 0}
   _rootTransform: {fileID: 1230692733}
+  _health: 0
   _weaponController: {fileID: 590273562}
   _weaponModel: {fileID: 11400000, guid: 6f43b5aff533397498851d8679737ba3, type: 2}
   _model: {fileID: 11400000, guid: 7043ea6a78eb0f84da94063a6ce625df, type: 2}
@@ -1126,6 +1137,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1515349219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1515349220}
+  - component: {fileID: 1515349221}
+  m_Layer: 0
+  m_Name: GameSceneUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1515349220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515349219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1874599401}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1515349221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515349219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba037de75927ee4f805bae1290ca7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverCanvasGroup: {fileID: 0}
 --- !u!1 &1604143676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1430,7 @@ Transform:
   - {fileID: 2012512877}
   - {fileID: 368187203}
   - {fileID: 354786953}
+  - {fileID: 1515349220}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1424,3 +1480,4 @@ MonoBehaviour:
   _playerTouchInput: {fileID: 368187204}
   _player: {fileID: 816821520}
   _zombieSpawner: {fileID: 354786954}
+  _gameSceneUI: {fileID: 0}

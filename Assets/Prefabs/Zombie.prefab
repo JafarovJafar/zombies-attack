@@ -49,9 +49,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 3625630236164212284}
   _rigidbody: {fileID: 5146341834565509070}
-  _animator: {fileID: 0}
+  _animator: {fileID: 1119739210909575032}
+  _spriteRenderer: {fileID: 3625630236283548836}
   _rootTransform: {fileID: 3625630237874885932}
+  _health: 0
   _model: {fileID: 0}
+  _walkAnimationName: Zombie_Walk
+  _attackAnimationName: Zombie_Attack
 --- !u!114 &3625630236164212674
 MonoBehaviour:
   m_ObjectHideFlags: 0

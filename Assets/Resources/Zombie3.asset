@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4dc175cc0bbc4d45bed015189b829d7, type: 3}
-  m_Name: Zombie1
+  m_Name: Zombie3
   m_EditorClassIdentifier: 
-  _moveSpeed: 2
-  _defaultHealth: 10
+  _moveSpeed: 1
+  _defaultHealth: 50
   _minHealth: 0
   _attackDistance: 1.5
   _attackPrepareDuration: 0.5
   _attackReleaseDuration: 0.5
   _strength: 10
-  _cost: 7
-  _color: {r: 0, g: 0, b: 0, a: 1}
+  _cost: 30
+  _color: {r: 1, g: 0, b: 0, a: 1}

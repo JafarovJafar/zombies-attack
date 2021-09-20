@@ -14,6 +14,7 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] protected Collider2D _collider;
     [SerializeField] protected Rigidbody2D _rigidbody;
     [SerializeField] protected Animator _animator;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
 
     #region Movement
     protected Vector2 _moveVector = new Vector2();

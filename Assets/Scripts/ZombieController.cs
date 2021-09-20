@@ -46,10 +46,16 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
     private RaycastHit2D _raycastHit;
     private IDamageable _tempIDamageable;
 
+    [SerializeField] private string _walkAnimationName;
+    [SerializeField] private string _attackAnimationName;
+
     public void Init(ZombieModel model)
     {
-
         _model = model;
+
+        _spriteRenderer.color = _model.Color;
+
+        _health = _model.DefaultHealth;
     }
 
     public void Enable()
@@ -59,6 +65,7 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
 
     public void Attack(UnityAction Finished)
     {
+        PlayAnimation(_attackAnimationName);
         StartCoroutine(AttackAsync(Finished));
     }
 
@@ -114,5 +121,15 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
     {
         transform.position = goalTransform.position;
         _rootTransform.rotation = goalTransform.rotation;
+    }
+
+    private void PlayAnimation(string animationName)
+    {
+        _animator.Play(animationName);
+    }
+
+    public void Follow()
+    {
+        PlayAnimation(_walkAnimationName);
     }
 }

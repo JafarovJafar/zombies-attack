@@ -30,13 +30,15 @@ public class BulletController : MonoBehaviour, IPoolItem, IDamageable
     public float MoveSpeed => _moveSpeed;
     public float Strength => _strength;
 
-    [SerializeField] private float _moveSpeed;
+    private float _moveSpeed;
     [SerializeField] private float _strength;
 
     private bool _isDamaged;
     private float _lastDamage;
     private float _health = 1f;
     private float _minHealth = 0;
+
+    [SerializeField] private Rigidbody2D _rigidbody;
     #endregion
 
     #region Methods
@@ -48,8 +50,12 @@ public class BulletController : MonoBehaviour, IPoolItem, IDamageable
 
     public void Enable()
     {
+        Debug.Log(1);
+
         // в дальнейшем можно будет делать всякие штуки при появлении
         // допустим анимация появления, звук
+
+        _rigidbody.simulated = true;
     }
 
     public void TakeDamage(float damage)
@@ -69,14 +75,14 @@ public class BulletController : MonoBehaviour, IPoolItem, IDamageable
                 Destroy();
             }
 
-
-
             _isDamaged = false;
         }
     }
 
     private void Destroy()
     {
+        _rigidbody.simulated = false;
+
         gameObject.SetActive(false);
     }
     #endregion
