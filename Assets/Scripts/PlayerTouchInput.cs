@@ -10,21 +10,16 @@ public class PlayerTouchInput : MonoBehaviour
             _goalPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _goalPosition.z = 0;
 
-            _controllable.SetGoalPosition(_goalPosition);
+            _goalPosition -= _player.transform.position;
+
+            _player.TouchPosition = _goalPosition;
         }
     }
     #endregion
 
     #region Vars
     [SerializeField] private Camera _camera;
-    private IControllable _controllable;
+    [SerializeField] private PlayerController _player;
     private Vector3 _goalPosition = new Vector3();
-    #endregion
-
-    #region Methods
-    public void Init(IControllable controllable)
-    {
-        _controllable = controllable;
-    }
     #endregion
 }

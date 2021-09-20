@@ -7,7 +7,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private GameObject _itemPrefab;
     [SerializeField] private string _itemName;
 
-    private List<GameObject> _items = new List<GameObject>();
+    [SerializeField] private List<GameObject> _items = new List<GameObject>();
     #endregion
 
     #region Methods

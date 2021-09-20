@@ -10,11 +10,11 @@ public class WeaponController : MonoBehaviour
 
     private float _lastShootTime;
 
-    private WeaponCharacteristics _characteristics;
+    private WeaponModel _characteristics;
 
     [SerializeField] private Transform _muzzleTransform;
 
-    public void Init(WeaponCharacteristics characteristics)
+    public void Init(WeaponModel characteristics)
     {
         _characteristics = characteristics;
 
@@ -30,6 +30,6 @@ public class WeaponController : MonoBehaviour
         tempGO.transform.position = _muzzleTransform.position;
         tempGO.transform.rotation = _muzzleTransform.rotation;
 
-        tempGO.GetComponent<Bullet>().Init(_characteristics);
+        tempGO.GetComponent<BulletController>().Init(_characteristics);
     }
 }

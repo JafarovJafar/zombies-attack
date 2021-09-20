@@ -2,5 +2,7 @@ using UnityEngine;
 
 public interface IControllable
 {
-    void SetGoalPosition(Vector3 goalPosition);
+    float HorAxis { get; set; }
+    float VertAxis { get; set; }
+    Vector2 TouchPosition { get; set; }
 }
