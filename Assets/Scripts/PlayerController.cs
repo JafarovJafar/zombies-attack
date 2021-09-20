@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : CharacterController, IControllable, IDamageable
 {
-    #region Base
+    #region Unity API
     private void Start()
     {
         _weaponController.Init(_weaponModel);
@@ -64,14 +64,17 @@ public class PlayerController : CharacterController, IControllable, IDamageable
     private readonly string SHOOT_ANIMATION_NAME = "Shoot";
     #endregion
 
+    #region Other
+    protected override CharacterModel BaseModel => _model;
 
     [SerializeField] private PlayerModel _model;
     public PlayerModel Model => _model;
+    #endregion
 
-    protected override CharacterModel BaseModel => _model;
-
+    #region Interaction
     private bool _isDamaged;
     private float _lastDamage;
+    #endregion
     #endregion
 
     #region Methods
@@ -96,8 +99,6 @@ public class PlayerController : CharacterController, IControllable, IDamageable
     {
         _isDamaged = true;
         _lastDamage = damage;
-
-        Debug.Log("vvv");
     }
 
     private void ProcessDamage()
