@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour, IPoolItem, IDamageable
 {
-    #region Base
+    #region Unity API
     private void Update()
     {
         _rigidbody.velocity = Vector3.up * _moveSpeed;
@@ -31,7 +31,7 @@ public class BulletController : MonoBehaviour, IPoolItem, IDamageable
     public float Strength => _strength;
 
     private float _moveSpeed;
-    [SerializeField] private float _strength;
+    private float _strength;
 
     private bool _isDamaged;
     private float _lastDamage;
@@ -50,8 +50,6 @@ public class BulletController : MonoBehaviour, IPoolItem, IDamageable
 
     public void Enable()
     {
-        Debug.Log(1);
-
         // в дальнейшем можно будет делать всякие штуки при появлении
         // допустим анимация появления, звук
 
