@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ZombieAI : MonoBehaviour
 {
-    #region Base
+    #region Unity API
     private void Start()
     {
         EventsPool.Instance.PlayerDead += ProcessPlayerDeath;
@@ -61,14 +61,6 @@ public class ZombieAI : MonoBehaviour
     #endregion
 
     #region Vars
-    [SerializeField] private ZombieController _zombieController; // вообще тут в идеале указать интерфейс IControllable, но интерфейсы нельзя прокидывать через инспектор
-
-    public Transform _goalTransform;
-
-    private Vector3 _goalVector;
-
-    private RaycastHit2D _raycastHit;
-
     #region State Machine
     private enum States
     {
@@ -79,6 +71,14 @@ public class ZombieAI : MonoBehaviour
     private States _currentState;
     #endregion
 
+    #region Other
+    [SerializeField] private ZombieController _zombieController; // вообще тут в идеале указать интерфейс IControllable, но интерфейсы нельзя прокидывать через инспектор
+
+    public Transform _goalTransform;
+    private Vector3 _goalVector;
+
+    private RaycastHit2D _raycastHit;
+    #endregion
     #endregion
 
     #region Methods
