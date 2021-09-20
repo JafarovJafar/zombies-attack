@@ -15,5 +15,5 @@ MonoBehaviour:
   _name: MachineGun
   _shootInterval: 0.1
   _strength: 1
-  _bulletSpeed: 10
+  _bulletSpeed: 25
   _bulletPrefab: {fileID: 1287532068161542503, guid: ac2f9e2466660f545bf25d3dbe128c45, type: 3}
