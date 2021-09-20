@@ -397,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
+  _player: {fileID: 816821520}
 --- !u!1 &411554468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1478,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5922dda0fa13d4d876195644e456bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTouchInput: {fileID: 368187204}
-  _player: {fileID: 816821520}
   _zombieSpawner: {fileID: 354786954}
   _gameSceneUI: {fileID: 0}
