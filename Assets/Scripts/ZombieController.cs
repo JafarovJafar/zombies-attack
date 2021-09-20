@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ZombieController : CharacterController, IControllable, IPoolItem, IDamageable
 {
-    #region Base
+    #region Unity API
     private void Update()
     {
         GetMoveVector();
@@ -17,6 +17,7 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
     }
     #endregion
 
+    #region Inputs
     public float HorAxis
     {
         get => _horAxis;
@@ -34,21 +35,28 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
         get => _touchPosition;
         set => _touchPosition = value;
     }
+    #endregion
 
-    protected override CharacterModel BaseModel => _model;
-
-    [SerializeField] private ZombieModel _model;
-    public ZombieModel Model => _model;
-
+    #region Interaction
     private bool _isDamaged;
     private float _lastDamage;
 
     private RaycastHit2D _raycastHit;
     private IDamageable _tempIDamageable;
+    #endregion
 
+    #region Animations
     [SerializeField] private string _walkAnimationName;
     [SerializeField] private string _attackAnimationName;
+    #endregion
 
+    #region Other
+    protected override CharacterModel BaseModel => _model;
+    [SerializeField] private ZombieModel _model;
+    public ZombieModel Model => _model;
+    #endregion
+
+    #region Methods
     public void Init(ZombieModel model)
     {
         _model = model;
@@ -132,4 +140,5 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
     {
         PlayAnimation(_walkAnimationName);
     }
+    #endregion
 }
