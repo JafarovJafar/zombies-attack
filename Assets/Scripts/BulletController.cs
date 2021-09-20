@@ -5,7 +5,7 @@ public class BulletController : MonoBehaviour, IPoolItem, IDamageable
     #region Base
     private void Update()
     {
-        transform.Translate(Vector3.up * _moveSpeed * Time.deltaTime);
+        _rigidbody.velocity = Vector3.up * _moveSpeed;
     }
 
     private void LateUpdate()
