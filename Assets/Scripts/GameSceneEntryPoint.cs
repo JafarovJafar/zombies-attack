@@ -23,6 +23,8 @@ public class GameSceneEntryPoint : MonoBehaviour
 
     private float _score;
 
+    [SerializeField] private Transform[] _spawnPoints;
+
     private void ProcessPlayerDeath()
     {
         PlayerPrefs.SetFloat(CONSTANTS.SCORE_PREF_NAME, _score);
@@ -39,5 +41,10 @@ public class GameSceneEntryPoint : MonoBehaviour
     private void GoToMainMenu()
     {
         SceneManager.LoadScene(CONSTANTS.MAIN_MENU_SCENE_NAME);
+    }
+
+    private void AdaptSpawnPoints()
+    {
+
     }
 }
