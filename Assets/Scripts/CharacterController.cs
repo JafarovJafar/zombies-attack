@@ -5,33 +5,35 @@ using UnityEngine;
 /// </summary>
 public abstract class CharacterController : MonoBehaviour
 {
+    #region Public Properties
+    public Transform RootTransform => _rootTransform;
+    public Vector3 Up => _rootTransform.up;
+    #endregion
+
     #region Inputs
     protected float _horAxis;
     protected float _vertAxis;
     protected Vector2 _touchPosition;
     #endregion
 
+    #region Movement
     [SerializeField] protected Collider2D _collider;
     [SerializeField] protected Rigidbody2D _rigidbody;
-    [SerializeField] protected Animator _animator;
-    [SerializeField] protected SpriteRenderer _spriteRenderer;
-
-    #region Movement
-    protected Vector2 _moveVector = new Vector2();
-
     [SerializeField] protected Transform _rootTransform;
-
-    public Transform RootTransform => _rootTransform;
-
-    public Vector3 Up => _rootTransform.up;
-
+    
+    protected Vector2 _moveVector = new Vector2();
     private Vector3 _goalEulerAngles = new Vector3();
     #endregion
 
+    #region Other
+    protected abstract CharacterModel BaseModel { get; }
     [SerializeField] protected float _health;
 
-    protected abstract CharacterModel BaseModel { get; }
+    [SerializeField] protected Animator _animator;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    #endregion
 
+    #region Methods
     protected virtual void GetMoveVector()
     {
         _moveVector.x = _horAxis;
@@ -51,4 +53,5 @@ public abstract class CharacterController : MonoBehaviour
 
         _rootTransform.eulerAngles = _goalEulerAngles;
     }
+    #endregion
 }
