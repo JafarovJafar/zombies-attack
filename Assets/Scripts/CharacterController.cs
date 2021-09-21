@@ -49,7 +49,7 @@ public abstract class CharacterController : MonoBehaviour
 
     protected virtual void Rotate()
     {
-        _goalEulerAngles.z = Vector2.SignedAngle(transform.up, _touchPosition);
+        _goalEulerAngles.z = Vector2.SignedAngle(transform.up, _touchPosition - (Vector2)transform.position);
 
         _rootTransform.eulerAngles = _goalEulerAngles;
     }

@@ -10,8 +10,6 @@ public class PlayerTouchInput : MonoBehaviour
             _goalPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
             _goalPosition.z = 0;
 
-            _goalPosition -= _player.transform.position;
-
             _player.TouchPosition = _goalPosition;
         }
     }

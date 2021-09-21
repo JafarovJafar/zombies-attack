@@ -43,6 +43,7 @@ public class ZombieAI : MonoBehaviour
                 _goalVector = _goalTransform.position - transform.position;
                 _zombieController.HorAxis = _goalVector.x;
                 _zombieController.VertAxis = _goalVector.y;
+                _zombieController.TouchPosition = _goalTransform.position;
 
                 if (_goalVector.magnitude <= _zombieController.Model.AttackDistance)
                 {
