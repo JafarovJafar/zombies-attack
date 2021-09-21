@@ -1078,6 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d00bcd42c4b0e94eb51c434c55c690d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _touchPosition: {x: 0, y: 0}
   _collider: {fileID: 816821521}
   _rigidbody: {fileID: 816821522}
   _rootTransform: {fileID: 1230692733}
@@ -2112,3 +2113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombieSpawner: {fileID: 354786954}
   _gameSceneUI: {fileID: 1515349221}
+  _camera: {fileID: 519420031}
+  _player: {fileID: 816821520}

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3625630236164212675}
-  - component: {fileID: 3625630236164212285}
   - component: {fileID: 3625630236164212674}
+  - component: {fileID: 3625630236164212285}
   - component: {fileID: 3625630236164212284}
   - component: {fileID: 5146341834565509070}
   m_Layer: 0
@@ -35,27 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3625630236164212285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625630236164212672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f7aa6a445f9a34ab6067da798208da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: 3625630236164212284}
-  _rigidbody: {fileID: 5146341834565509070}
-  _animator: {fileID: 1119739210909575032}
-  _spriteRenderer: {fileID: 3625630236283548836}
-  _rootTransform: {fileID: 3625630237874885932}
-  _health: 0
-  _model: {fileID: 0}
-  _walkAnimationName: Zombie_Walk
-  _attackAnimationName: Zombie_Attack
 --- !u!114 &3625630236164212674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +49,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _zombieController: {fileID: 3625630236164212285}
   _goalTransform: {fileID: 0}
+--- !u!114 &3625630236164212285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625630236164212672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f7aa6a445f9a34ab6067da798208da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _touchPosition: {x: 0, y: 0}
+  _collider: {fileID: 3625630236164212284}
+  _rigidbody: {fileID: 5146341834565509070}
+  _rootTransform: {fileID: 3625630237874885932}
+  _health: 0
+  _animator: {fileID: 1119739210909575032}
+  _spriteRenderer: {fileID: 3625630236283548836}
+  _walkAnimationName: Zombie_Walk
+  _attackAnimationName: Zombie_Attack
+  _model: {fileID: 0}
 --- !u!58 &3625630236164212284
 CircleCollider2D:
   m_ObjectHideFlags: 0

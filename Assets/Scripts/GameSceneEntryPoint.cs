@@ -15,6 +15,8 @@ public class GameSceneEntryPoint : MonoBehaviour
 
         _gameSceneUI.Init();
         _gameSceneUI.ExitButtonClicked += GoToMainMenu;
+
+        AdaptSpawnPoints();
     }
 
     [SerializeField] ZombieSpawner _zombieSpawner;
@@ -23,7 +25,9 @@ public class GameSceneEntryPoint : MonoBehaviour
 
     private float _score;
 
-    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Camera _camera;
+
+    [SerializeField] private PlayerController _player;
 
     private void ProcessPlayerDeath()
     {
@@ -45,6 +49,27 @@ public class GameSceneEntryPoint : MonoBehaviour
 
     private void AdaptSpawnPoints()
     {
+        float goalAspectRatio = 2048f / 1536f;
+        float currentAspectRatio = Screen.width / (float)Screen.height;
 
+        float goalScreenHalfInUnits = _camera.orthographicSize * goalAspectRatio;
+        float currentScreenHalfInUnits = _camera.orthographicSize * currentAspectRatio;
+
+        float increaser = Mathf.Abs(_zombieSpawner.SpawnPoints[0].position.x) - goalScreenHalfInUnits;
+
+        Vector3 goalPosition;
+        Vector3 goalRotation = new Vector3();
+        float sign;
+
+        foreach (Transform point in _zombieSpawner.SpawnPoints)
+        {
+            goalPosition = point.position;
+            sign = Mathf.Sign(goalPosition.x);
+            goalPosition.x = (currentScreenHalfInUnits + increaser) * sign;
+            point.position = goalPosition;
+
+            goalRotation.z = Vector2.SignedAngle(point.up, _player.transform.position - point.position);
+            point.eulerAngles += goalRotation;
+        }
     }
 }

@@ -26,7 +26,6 @@ public class ObjectPool : MonoBehaviour
             tempGO = InstantiatePrefab();
         }
 
-        tempGO.SetActive(true);
         tempGO.GetComponent<IPoolItem>().Enable();
 
         return tempGO;

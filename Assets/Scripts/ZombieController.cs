@@ -9,6 +9,7 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
     {
         GetMoveVector();
         Move();
+        Rotate();
     }
 
     private void LateUpdate()
@@ -68,7 +69,7 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
 
     public void Enable()
     {
-
+        gameObject.SetActive(true);
     }
 
     public void Attack(UnityAction Finished)
