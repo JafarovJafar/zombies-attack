@@ -122,6 +122,7 @@ public class ZombieController : CharacterController, IControllable, IPoolItem, I
 
     private void Destroy()
     {
+        EventsPool.Instance.ZombieDead?.Invoke(_model);
         gameObject.SetActive(false);
     }
 

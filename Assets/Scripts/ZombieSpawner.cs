@@ -5,6 +5,8 @@ using UnityEngine;
 public class ZombieSpawner : MonoBehaviour
 {
     #region Vars
+    public Transform[] SpawnPoints => _spawnPoints;
+
     private Coroutine _spawnCoroutine;
     private Coroutine _speedUpCoroutine;
 
